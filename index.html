@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IdeaLens — Startup Idea Analyzer</title>
+  <meta name="description" content="Evaluate your startup idea with an expert AI-powered analysis covering market potential, feasibility, competition, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="bg-gradient"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-particles" id="particles"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="url(#logoGrad)" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" fill="url(#logoGrad)"/>
+            <circle cx="12" cy="12" r="2" fill="#0a0e1a"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="24" y2="24">
+                <stop stop-color="#6366f1"/>
+                <stop offset="1" stop-color="#a78bfa"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">IdeaLens</span>
+      </div>
+      <nav class="header-nav">
+        <p class="header-tagline">Expert Startup Idea Evaluation</p>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-badge">Powered by Intelligent Analysis</div>
+      <h1 class="hero-title">Evaluate Your <span class="hero-accent">Startup Idea</span></h1>
+      <p class="hero-subtitle">Get a comprehensive, structured analysis of your idea's potential across 7 key dimensions — problem strength, feasibility, competition, innovation, scalability, and more.</p>
+    </section>
+
+    <!-- Input Section -->
+    <section class="input-section glass-card" id="inputSection">
+      <form id="ideaForm" autocomplete="off">
+        <div class="form-group">
+          <label for="startupIdea" class="form-label">
+            <svg class="label-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Startup Idea <span class="required">*</span>
+          </label>
+          <textarea id="startupIdea" class="form-input" rows="4" placeholder="Describe your startup idea in detail — what it does, how it works, and what makes it unique..." required></textarea>
+          <div class="char-count"><span id="ideaCharCount">0</span> characters</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="targetAudience" class="form-label">
+              <svg class="label-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Target Audience <span class="optional">(optional)</span>
+            </label>
+            <input id="targetAudience" class="form-input" type="text" placeholder="e.g., Small business owners, Gen-Z students..." />
+          </div>
+          <div class="form-group">
+            <label for="businessModel" class="form-label">
+              <svg class="label-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              Business Model <span class="optional">(optional)</span>
+            </label>
+            <input id="businessModel" class="form-input" type="text" placeholder="e.g., SaaS subscription, Marketplace commission..." />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="problemStatement" class="form-label">
+            <svg class="label-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Problem Statement <span class="optional">(optional)</span>
+          </label>
+          <textarea id="problemStatement" class="form-input" rows="3" placeholder="What real-world problem does this solve? Who faces it and how often?"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" id="analyzeBtn">
+          <svg class="btn-svg-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          <span class="btn-text">Analyze Idea</span>
+          <span class="btn-icon">&rarr;</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- Loading Overlay -->
+    <section class="loading-section" id="loadingSection" style="display:none">
+      <div class="loader-container glass-card">
+        <div class="loader-ring"></div>
+        <p class="loader-text">Analyzing your idea...</p>
+        <p class="loader-sub" id="loaderStatusText">Evaluating problem strength</p>
+        <div class="loader-progress">
+          <div class="loader-progress-fill" id="loaderProgressFill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section" id="resultsSection" style="display:none">
+
+      <!-- Lift Score Hero -->
+      <div class="lift-score-card glass-card" id="liftScoreCard">
+        <div class="lift-score-ring" id="liftScoreRing">
+          <svg viewBox="0 0 200 200" class="score-svg">
+            <circle cx="100" cy="100" r="85" class="score-track"></circle>
+            <circle cx="100" cy="100" r="85" class="score-fill" id="scoreFill"></circle>
+          </svg>
+          <div class="score-value" id="scoreValue">0</div>
+        </div>
+        <div class="lift-score-info">
+          <h2 class="lift-label">Lift Score</h2>
+          <p class="lift-desc" id="liftDesc">Overall potential of your startup idea</p>
+        </div>
+      </div>
+
+      <!-- Verdict Badge -->
+      <div class="verdict-card glass-card" id="verdictCard">
+        <div class="verdict-icon" id="verdictIcon">
+          <!-- SVG icon injected by JS -->
+        </div>
+        <div class="verdict-content">
+          <h3 class="verdict-label" id="verdictLabel">High Potential</h3>
+          <p class="verdict-text" id="verdictText"></p>
+        </div>
+      </div>
+
+      <!-- Detailed Breakdown -->
+      <div class="breakdown-card glass-card">
+        <div class="card-header">
+          <svg class="card-header-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <h2 class="card-title">Detailed Breakdown</h2>
+        </div>
+        <div class="sliders-grid" id="slidersGrid">
+          <!-- Sliders injected by JS -->
+        </div>
+      </div>
+
+      <!-- Competition Analysis -->
+      <div class="analysis-card glass-card" id="competitionCard">
+        <div class="card-header">
+          <svg class="card-header-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <h2 class="card-title">Competition Analysis</h2>
+        </div>
+        <div class="analysis-content" id="competitionContent"></div>
+      </div>
+
+      <!-- Strengths -->
+      <div class="analysis-card strengths-card glass-card" id="strengthsCard">
+        <div class="card-header">
+          <svg class="card-header-icon strengths-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h2 class="card-title">Strengths (Anti-Gravity Factors)</h2>
+        </div>
+        <ul class="analysis-list" id="strengthsList"></ul>
+      </div>
+
+      <!-- Weaknesses -->
+      <div class="analysis-card weaknesses-card glass-card" id="weaknessesCard">
+        <div class="card-header">
+          <svg class="card-header-icon weaknesses-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <h2 class="card-title">Weaknesses (Gravity Factors)</h2>
+        </div>
+        <ul class="analysis-list" id="weaknessesList"></ul>
+      </div>
+
+      <!-- Improvement Suggestions -->
+      <div class="analysis-card suggestions-card glass-card" id="suggestionsCard">
+        <div class="card-header">
+          <svg class="card-header-icon suggestions-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+          <h2 class="card-title">Improvement Suggestions</h2>
+        </div>
+        <ul class="analysis-list" id="suggestionsList"></ul>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions-bar">
+        <button class="btn-secondary btn-improve" id="improveBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          <span class="btn-text">Improve Again</span>
+        </button>
+        <button class="btn-secondary btn-download" id="downloadBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span class="btn-text">Download Report</span>
+        </button>
+        <button class="btn-secondary btn-new" id="newIdeaBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <span class="btn-text">New Idea</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>Built by <strong>IdeaLens</strong> — Your startup co-pilot.</p>
+  </footer>
+
+  <script src="evaluator.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
